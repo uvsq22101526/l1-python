@@ -1,2 +1,2 @@
-msg = "je fais sur le windows"
+msg = "je fais sur le mac"
 print(msg.capitalize())
