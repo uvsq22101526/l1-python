@@ -1,2 +1,2 @@
-msg = "ceci est un test ?"
+msg = "Hello"
 print(msg.capitalize())
