@@ -1,4 +1,4 @@
-import matplotlib.pyplot as plt
+import matplotlib.pylot as plt
 import numpy as np
 
 x = np.linspace(0, 20, 100)
