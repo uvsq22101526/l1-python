@@ -73,11 +73,11 @@ def sommeTemps(temps1,temps2):
 
 #afficheTemps(sommeTemps((2,3,4,25),(5,22,57,1)))
 
-def proportionTemps(temps, proportion):
-    temps_seconde = tempsEnSeconde(temps)
-    temps_seconde = temps_seconde * (1-proportion)
-    temps = secondeEnTemps(temps_seconde)
-    return temps 
+def proportionTemps(temps,proportion):
+    temps = int(proportion * tempsEnSeconde(temps))
+    temps = secondeEnTemps(temps)
+    return temps
+
+afficheTemps(proportionTemps(proportion = 0.2, temps = (2,0,36,0)))
 
 
-afficheTemps(proportionTemps((2,0,36,0),0.2))
