@@ -95,14 +95,17 @@ def proportionTemps(temps,proportion):
 # afficher un temps sous forme de date
 
 def tempsEnDate(temps):
-    an = temps[0] // 31536000
-    temps = an, temps[0] % 31536000, 
+    #temps = tempsEnSeconde(temps)
+    temps = temps // 31536000, (temps % 31536000) // 86400, ((temps % 31536000) % 86400) // 3600, \
+        (((temps % 31536000) % 86400) % 3600) // 60, ((((temps % 31536000) % 86400) % 3600) % 60) 
+    return temps
 
 
 def afficheDate(date = -1):
     pass
     
-temps = secondeEnTemps(1000000000)
-afficheTemps(temps)
-afficheDate(tempsEnDate(temps))
-afficheDate()
+#temps = secondeEnTemps(1000000000)
+#afficheTemps(temps)
+print(tempsEnDate(1000000000))
+#afficheDate(tempsEnDate(temps))
+#afficheDate()
