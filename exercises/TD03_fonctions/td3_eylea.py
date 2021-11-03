@@ -96,16 +96,19 @@ def proportionTemps(temps,proportion):
 
 def tempsEnDate(temps):
     #temps = tempsEnSeconde(temps)
-    temps = temps // 31536000, (temps % 31536000) // 86400, ((temps % 31536000) % 86400) // 3600, \
-        (((temps % 31536000) % 86400) % 3600) // 60, ((((temps % 31536000) % 86400) % 3600) % 60) 
+    #temps = temps // 31536000, (temps % 31536000) // 86400, ((temps % 31536000) % 86400) // 3600, \
+        #(((temps % 31536000) % 86400) % 3600) // 60, ((((temps % 31536000) % 86400) % 3600) % 60) 
+    an = temps[0] // 365
+    temps = an, temps[0] % 365, temps[1], temps[2], temps[3]
     return temps
 
 
 def afficheDate(date = -1):
     pass
-    
-#temps = secondeEnTemps(1000000000)
-#afficheTemps(temps)
-print(tempsEnDate(1000000000))
-#afficheDate(tempsEnDate(temps))
+
+
+temps = secondeEnTemps(1000000000)
+afficheTemps(temps)
+tempsEnDate(temps)
+#afficheDate(tempsEnDate(temps)
 #afficheDate()
