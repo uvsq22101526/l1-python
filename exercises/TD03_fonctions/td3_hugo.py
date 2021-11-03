@@ -78,6 +78,26 @@ def proportionTemps(temps,proportion):
     temps = secondeEnTemps(temps)
     return temps
 
-afficheTemps(proportionTemps(proportion = 0.2, temps = (2,0,36,0)))
+#afficheTemps(proportionTemps(proportion = 0.2, temps = (2,0,36,0)))
 
+#afficher un temps sous forme de date
 
+def tempsEnDate(temps):
+    jour = temps[0]
+    heure = temps[1]
+    minute = temps[2]
+    seconde = temps[3]
+    an = jour // 365 
+    jour = jour % 365
+    affichage = (an, jour, heure, minute, seconde)
+    print(affichage)
+
+def afficheDate(date = -1):
+    pass
+    
+temps = secondeEnTemps(1000000000)
+afficheTemps(temps)
+tempsEnDate(temps)
+
+#afficheDate(tempsEnDate(temps))
+#afficheDate()
