@@ -1,3 +1,5 @@
+import time
+
 def tempsEnSeconde(temps):
     jour = temps[0]
     heure = temps[1]
@@ -90,14 +92,20 @@ def tempsEnDate(temps):
     an = jour // 365 
     jour = jour % 365
     affichage = (an, jour, heure, minute, seconde)
-    print(affichage)
+    return affichage
 
-def afficheDate(date = -1):
-    pass
+def afficheDate(affichage):
+    an = affichage[0]
+    jour = affichage[1]
+    heure = affichage[2]
+    minute = affichage[3]
+    seconde = affichage[4]
+    an = an + 1970
+    print( jour, an, "à", heure, ":", minute, ":", seconde)
     
-temps = secondeEnTemps(1000000000)
-afficheTemps(temps)
-tempsEnDate(temps)
-
+#temps = secondeEnTemps(1000000000)
+#afficheTemps(temps)
+#tempsEnDate(temps)
 #afficheDate(tempsEnDate(temps))
-#afficheDate()
+print (time.gmtime(0))
+
