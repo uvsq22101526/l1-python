@@ -107,5 +107,5 @@ def afficheDate(affichage):
 #afficheTemps(temps)
 #tempsEnDate(temps)
 #afficheDate(tempsEnDate(temps))
-print (time.gmtime(0))
+
 
