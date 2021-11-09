@@ -53,6 +53,23 @@ def afficheTemps(temps):
     
 #afficheTemps((1,0,14,23))
 
+'''AUTRE SOLUTION : ----------------------------------------------------------------------------------------------------------------------------------------
+
+def affichePlurielOuNon(nombre,mot):
+    if nombre > 1:
+        print(nombre, mot + "s", end = " ")
+    elif nombre == 1:
+        print(nombre, mot, end = " ")
+
+def afficheTemps(temps):
+    affichePlurielOuNon(temps[0], "jour")
+    affichePlurielOuNon(temps[1], "heure")
+    affichePlurielOuNon(temps[2], "minute")
+    affichePlurielOuNon(temps[3], "seconde")
+    print(" ")
+    
+-------------------------------------------------------------------------------------------------------------------------------------------------------------'''
+
 
 # demande du temps
 
@@ -102,13 +119,63 @@ def tempsEnDate(temps):
     temps = an, temps[0] % 365, temps[1], temps[2], temps[3]
     return temps
 
+'''OU ALORS : -----------------------------------------------------------------------------------------------------------------------------------------------
+
+def tempsEnDate(temps):
+    annee = temps[0] // 365 + 1970
+    jours_restants = temps[0] % 365
+    return annee, jours_restants, temps[1], temps[2], temps[3]
 
 def afficheDate(date = -1):
-    pass
+    print(date[1], date[0], date[2], ":", date[3], ":", date[4])
+    
+    
+    if date == -1:
+        print("Pas de paramètre date donné")
+        return
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------'''
+
+
+#le -1 indique que si lors de l'appel de la fonction aucun temps n'est donné, il affichera -1, le paramètre n'est pas obligatoire
+def afficheDate(date = -1):
+    an = date[0] + 1970
+    jour = date[1]
+    heure = date[2]
+    minute = date[3]
+    seconde = date[4]
+    return print("Jour", jour, "de l'année", an, "à", heure, "h", minute, "min", seconde, "s")
 
 
 temps = secondeEnTemps(1000000000)
-afficheTemps(temps)
-tempsEnDate(temps)
-#afficheDate(tempsEnDate(temps)
+#afficheTemps(temps)
+print(tempsEnDate(temps))
+afficheDate(tempsEnDate(temps))
 #afficheDate()
+
+
+def bisextile(jour):
+    annee = jour // 365 + 2020
+    liste = []
+    compteur = 2020
+    #reste = jour % 365
+    for i in range(2020, annee + 1):
+        compteur += 1
+        if i % 4 == 0 and (i % 100 != 0 or i % 400 == 0):
+            liste.append(i)
+    
+    return print("Les années bissextiles depuis le 1 janvier 2020 jusqu'à la fin des", jour, "jours sont :", liste)
+    
+#bisextile(20000)
+
+
+def nombreBisextile(jour):
+    annee = jour // 365 + 2020
+    liste = []
+    compteur = 2020
+    #reste = jour % 365
+    for i in range(2020, annee + 1):
+        compteur += 1
+        if i % 4 == 0 and (i % 100 != 0 or i % 400 == 0):
+            liste.append(i)
+    return print("Le nombre d'années bissextiles pour", jour, "jours est", len(liste))

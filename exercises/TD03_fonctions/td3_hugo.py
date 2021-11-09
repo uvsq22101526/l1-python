@@ -103,9 +103,9 @@ def afficheDate(affichage):
     an = an + 1970
     print( jour, an, "à", heure, ":", minute, ":", seconde)
     
-#temps = secondeEnTemps(1000000000)
+temps = secondeEnTemps(1000000000)
 #afficheTemps(temps)
-#tempsEnDate(temps)
+#print(tempsEnDate(temps))
 #afficheDate(tempsEnDate(temps))
 
 
