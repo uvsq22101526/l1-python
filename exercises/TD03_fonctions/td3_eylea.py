@@ -179,3 +179,70 @@ def nombreBisextile(jour):
         if i % 4 == 0 and (i % 100 != 0 or i % 400 == 0):
             liste.append(i)
     return print("Le nombre d'années bissextiles pour", jour, "jours est", len(liste))
+
+
+
+"""OU ALORS (erreur du sujet : à partir de 1970 et non pas 2020) : ----------------------------------------------------------------------------------------------
+
+def nombreBisextile(jour):
+    annee = 1970
+    compteur = 0
+    while jour >= 365:
+        if annee % 4 == 0 and annee % 100 != 0 or annee % 400 == 0:
+            jour = jour - 366
+            compteur += 1
+            annee += 1
+        else:
+            jour = jour - 365
+            annee += 1
+    
+    return compteur
+
+print(nombreBisextile(4760)) 
+
+
+def tempsEnDateBisextile(temps):
+    jours = temps[0]
+    jours_ajuste = jours - nombreBissextile(jours)
+
+return tempsEnDate((jours_ajuste, temps[1], temps[2], temps[3]))
+
+afficheDate(tempsEnDateBisextile(4760, 0, 0, 0)) --------------------------------------------------------------------------------------------------------------"""
+
+
+
+
+
+def verifie(liste_temps):
+
+    somme_temps_semaine_1 = liste_temps[0][0] * 24 + liste_temps[0][1]
+    if somme_temps_semaine_1 > 48:
+        print("Le volume horaire par semaine est dépassé pour la première semaine")
+    
+    somme_temps_semaine_2 = liste_temps[1][0] * 24 + liste_temps[1][1]
+    if somme_temps_semaine_2 > 48:
+        print("Le volume horaire par semaine est dépassé pour la deuxième semaine")
+    
+    somme_temps_semaine_3 = liste_temps[2][0] * 24 + liste_temps[2][1]
+    if somme_temps_semaine_3 > 48:
+        print("Le volume horaire par semaine est dépassé pour la troisième semaine")
+    
+    somme_temps_semaine_4 = liste_temps[3][0] * 24 + liste_temps[3][1]
+    if somme_temps_semaine_4 > 48:
+        print("Le volume horaire par semaine est dépassé pour la quatrième semaine")
+    
+    liste_temps[0] = tempsEnSeconde(liste_temps[0])
+    liste_temps[1] = tempsEnSeconde(liste_temps[1])
+    liste_temps[2] = tempsEnSeconde(liste_temps[2])
+    liste_temps[3] = tempsEnSeconde(liste_temps[3])
+
+    somme_temps_mois = liste_temps[0] + liste_temps[1] + liste_temps[2] + liste_temps[3]
+
+    if somme_temps_mois // 86400 > 48:
+        print("Le volume horaire par mois est dépassé")
+    
+    return
+
+
+#liste_temps = [[1,2,39,34],[0,1,9,4],[0,29,39,51],[0,31,13,46]]
+#verifie(liste_temps)
