@@ -4,7 +4,6 @@ carre_mag = [[4, 14, 15, 1], [9, 7, 6, 12], [5, 11, 10, 8], [16, 2, 3, 13]]
 
 #carre_pas_mag = [[4, 14, 15, 1], [9, 7, 6, 12], [5, 11, 10, 8], [16, 2, 7, 13]]
 carre_pas_mag = [list(i) for i in carre_mag]
-
 carre_pas_mag[3][2] = 7
 
 def afficheCarre(carre):
@@ -97,6 +96,7 @@ def estCarreMagique(carre):
     
     else:
         return False'''
+
 
 def estNormal(carre):
     array = []
